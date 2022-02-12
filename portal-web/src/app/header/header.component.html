@@ -1,0 +1,16 @@
+<header>
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+        <ul class="navbar-nav">
+            <li *ngIf="!loginService.isAdminLoggedIn()&&!loginService.isStudentLoggedIn()"><a routerLink="/login" class="nav-link">Login</a></li>
+            <div *ngIf="loginService.isAdminLoggedIn()">
+                <li><a routerLink="/view/lecturer/courses" class="nav-link">View Lecturer with Courses</a></li>
+                <li><a routerLink="/enroll/course" class="nav-link">Add/Enroll Student into New Course</a></li>
+                <li><a routerLink="/logout" class="nav-link">LogOut</a></li>
+            </div>
+            <div *ngIf="loginService.isStudentLoggedIn()">
+                <li><a routerLink="/view/student/schedule" class="nav-link">View Student Schedule</a></li>
+                <li><a routerLink="/logout" class="nav-link">LogOut</a></li>
+            </div>
+        </ul>
+    </nav>
+</header>

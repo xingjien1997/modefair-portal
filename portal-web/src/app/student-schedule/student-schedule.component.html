@@ -1,0 +1,25 @@
+<table style="width:70%">
+    
+    <th>
+        <tr>
+            Course Name - Lecturer
+        </tr>
+    </th>
+    <th style="text-align: -webkit-center;">
+        <tr>
+            Schedule (Year - Semester)
+        </tr>
+    </th>
+    <div style="display:table-row" *ngFor= "let s of studentSchedule; let i = index">
+        <td>
+            <tr> 
+                {{ s.schedule.course.courseName }} - {{ s.schedule.lecturer.lecturerName }}
+            </tr>
+        </td>
+        <td style="text-align: -webkit-center;">
+            <tr> 
+                {{ s.schedule.year }} - {{ s.schedule.semester }} 
+            </tr>
+        </td>
+    </div>
+</table>

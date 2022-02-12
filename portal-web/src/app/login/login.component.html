@@ -1,0 +1,13 @@
+<div class="container">
+    <div>
+        <input type="radio" name="loginBy" [(ngModel)]="loginBy" value="admin"> Admin
+        <input type="radio" name="loginBy" [(ngModel)]="loginBy" value="student"> Student
+    </div>
+    <div>
+        Username: <input type="text" name="username" [(ngModel)]="username">
+        Password: <input type="password" name="password" [(ngModel)]="password">
+    </div>
+    <button (click)=checkLogin() class="btn btn-sucess">
+        Login
+    </button>
+</div>

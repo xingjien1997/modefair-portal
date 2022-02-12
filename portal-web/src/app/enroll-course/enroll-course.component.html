@@ -1,0 +1,31 @@
+<div>
+    <select (ngModelChange)="findAvailableSchedulesByStudentId($event)"
+     [(ngModel)]="currentSelectedId">
+        <option [ngValue]="-1" disabled>--Please select student--</option>
+        <option *ngFor="let student of listOfStudent; let i = index" [ngValue]="student.id">
+           {{ student.id }} - {{ student.studentName }}
+        </option>
+      </select>
+</div>
+
+<div>
+   <select *ngIf="currentSelectedId != undefined"
+     [(ngModel)]="currentSelectedCourseScheduleIndex">
+        <option [ngValue]="-1" disabled>--Please select schedule--</option>
+        <option *ngFor="let schedule of listOfAvailableSchedules; let i = index" [ngValue]="schedule.id">
+            Year: {{ schedule.year }} - Semester: {{ schedule.semester }} - CourseName: {{ schedule.course.courseName }} - Credits: {{ schedule.course.courseCredits }} - Lecturer: {{ schedule.lecturer.lecturerName }}
+        </option>
+      </select>
+</div>
+
+<div>
+   <button (click)="addCourseWithSchedule()">
+      Add Course With Schedule
+   </button>
+</div>
+
+<div style="padding-top: 30%;">
+   Student Name: <input type="text" name="studentName" [(ngModel)]="studentName">
+   <button (click)="createStudent()">Create Student</button>
+</div>
+

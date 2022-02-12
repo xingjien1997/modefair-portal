@@ -1,0 +1,25 @@
+<table style="width:50%">
+    
+    <th>
+        <tr>
+            Lecturer Name
+        </tr>
+    </th>
+    <th>
+        <tr>
+            Courses Name
+        </tr>
+    </th>
+    <div style="display:table-row" *ngFor= "let lecturer of listOfLecturer; let i = index">
+        <td>
+            <tr> 
+                {{ lecturer }} 
+            </tr>
+        </td>
+        <td>
+            <tr *ngFor= "let course of listOfCourses[i]"> 
+                {{ course }} 
+            </tr>
+        </td>
+    </div>
+</table>
